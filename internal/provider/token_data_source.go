@@ -27,12 +27,12 @@ type TokenModel struct {
 }
 
 func (d *TokenDataSource) Metadata(_ context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
-	resp.TypeName = req.ProviderTypeName + "_invoke"
+	resp.TypeName = req.ProviderTypeName + "_token"
 }
 
 func (d *TokenDataSource) GetSchema(_ context.Context) (tfsdk.Schema, diag.Diagnostics) {
 	return tfsdk.Schema{
-		MarkdownDescription: "Get token from Azure AD to authenticate against an AAD auth enabled AKS cluster",
+		MarkdownDescription: "Get a token from Azure AD to authenticate against an AAD auth enabled AKS cluster",
 		Version:             1,
 		Attributes: map[string]tfsdk.Attribute{
 			"token": {
